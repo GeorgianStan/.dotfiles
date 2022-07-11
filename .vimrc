@@ -7,6 +7,7 @@ set relativenumber
 " Status line
 set laststatus=2
 set statusline=[%n]\ %<%f%h%m
+set shortmess-=S
 
 " Tabs
 set tabstop=2
@@ -39,6 +40,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 " Theming
@@ -59,6 +61,10 @@ noremap <Right> <Nop>
 " Maping
 vnoremap <C-c> "+y
 nnoremap <C-v> "+p
+
+" Nerd Tree Mapping
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 " WSL yank support
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
