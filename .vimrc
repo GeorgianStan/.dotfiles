@@ -4,6 +4,10 @@ set nocompatible
 set number
 set relativenumber
 
+" Status line
+set laststatus=2
+set statusline=[%n]\ %<%f%h%m
+
 " Tabs
 set tabstop=2
 set shiftwidth=2
