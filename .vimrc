@@ -49,6 +49,10 @@ noremap <Down>  <Nop>
 noremap <Left>  <Nop>
 noremap <Right> <Nop>
 
+" Maping
+vnoremap <C-c> "+y
+nnoremap <C-v> "+p
+
 " WSL yank support
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
 if executable(s:clip)
@@ -57,3 +61,4 @@ if executable(s:clip)
       autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
         augroup END
 endif
+
