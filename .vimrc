@@ -32,6 +32,8 @@ set mouse=a
 call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'arcticicestudio/nord-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Theming
@@ -61,4 +63,3 @@ if executable(s:clip)
       autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
         augroup END
 endif
-
