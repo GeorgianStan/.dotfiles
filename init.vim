@@ -47,7 +47,7 @@ noremap <Right> <Nop>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins - using vim-plug https://github.com/junegunn/vim-plug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
