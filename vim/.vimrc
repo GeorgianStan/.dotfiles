@@ -1,3 +1,5 @@
+" Destination path ~/.vimrc
+
 set term=xterm-256color
 set nocompatible
 
@@ -40,9 +42,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
-Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Theming
