@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " => General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number relativenumber  " Display line numbers
@@ -6,8 +6,11 @@ set clipboard=unnamedplus " Copy/paste between vim and other programs.
 set t_Co=256 " Set if term supports 256 colors.
 set clipboard=unnamedplus       " Copy/paste betwen vim and other programs.
 set mouse=a " Enable Mouse
-set nobackup                    " No auto backups
-set noswapfile                  " No swap
+set hidden " navigate buffers without losing unsaved work
+set undodir=~/.nvim/undodir
+set undofile " save undo history
+set noshowmode
+set signcolumn=auto
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -32,7 +35,7 @@ set smartindent
 " => Maping, Remaps and Leader
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set the <leader> var to white-space
-let g:mapleader = " "
+let g:mapleader = ","
 
 " Maping
 vnoremap <C-c> "+y
@@ -52,10 +55,17 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
+Plug 'lewis6991/gitsigns.nvim'
 " Telescope plugin and dependencies
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+" enable LSP
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
+
+" Require Plugins configs - georgian is the namespace specified inside
+" ~/.confing/nvim/lua
+lua require('georgian')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Theming
