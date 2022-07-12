@@ -49,6 +49,8 @@ noremap <Right> <Nop>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins - using vim-plug https://github.com/junegunn/vim-plug
+" Run :PlugInstall to install the plugins
+" To remove a plugin, simply comment it or remove it form this declaration list and then run :PlugClean
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.config/nvim/plugged')
 Plug 'gruvbox-community/gruvbox'
