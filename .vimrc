@@ -4,6 +4,8 @@ set nocompatible
 set number
 set relativenumber
 
+set encoding=UTF-8
+
 " Status line
 set laststatus=2
 set statusline=[%n]\ %<%f%h%m
@@ -41,6 +43,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Theming
