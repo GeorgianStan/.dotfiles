@@ -9,8 +9,12 @@ set mouse=a " Enable Mouse
 set hidden " navigate buffers without losing unsaved work
 set undodir=~/.nvim/undodir
 set undofile " save undo history
+set noswapfile
 set noshowmode
 set signcolumn=auto
+set scrolloff=8
+set nowrap
+set cursorline
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -34,18 +38,54 @@ set smartindent
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Maping, Remaps and Leader
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set the <leader> var to white-space
-let g:mapleader = ","
+" set the <leader> var to white-space
+noremap <Space> <Nop>
+let g:mapleader = " "
 
-" Maping
+" copy & paste - C stands for CTRL
 vnoremap <C-c> "+y
 nnoremap <C-v> "+p
 
-" Remaps
+" disable arrow navigation
 noremap <Up>    <Nop>
 noremap <Down>  <Nop>
 noremap <Left>  <Nop>
 noremap <Right> <Nop>
+
+" telescope remaps
+nnoremap <leader>p :Telescope find_files<CR>
+nnoremap <leader>b :Telescope buffers<CR>
+
+" splits navigation
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-l> <C-w>l
+
+" resizing splits
+noremap <silent> <C-Left> :vertical resize -3<CR>
+noremap <silent> <C-Right> :vertical resize +3<CR>
+noremap <silent> <C-Up> :resize -3<CR>
+noremap <silent> <C-Down> :resize +3<CR>
+
+" naviate buffers - S stand for Shift
+noremap <silent> <S-l> :bnext <CR>
+noremap <silent> <S-h> :bprevious <CR>
+
+" stay in indent mode
+vnoremap <silent> < <gv
+vnoremap <silent> > >gv
+
+" move text up and down - A stands for ALT
+nnoremap <silent> <A-j> :m .+1<CR>==
+nnoremap <silent> <A-k> :m .-2<CR>==
+inoremap <silent> <A-j> <Esc>:m .+1<CR>==gi
+inoremap <silent> <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
+vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
+
+" keep the yanked value in register after it was copied on top of another work
+vnoremap <silent> p "_dp
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins - using vim-plug https://github.com/junegunn/vim-plug
@@ -58,18 +98,18 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'lewis6991/gitsigns.nvim'
-" Telescope plugin and dependencies
+" telescope plugin and dependencies
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 " enable LSP
 Plug 'neovim/nvim-lspconfig'
-" Autocompletion
+" autocompletion
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'onsails/lspkind-nvim'
-" Treesitter - for improved syntax highlighting
+" treesitter - for improved syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 call plug#end()
 
