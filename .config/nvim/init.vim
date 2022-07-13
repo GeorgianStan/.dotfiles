@@ -15,6 +15,7 @@ set signcolumn=auto
 set scrolloff=8
 set nowrap
 set cursorline
+set completeopt=menuone,noselect " for autocompletion
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -108,13 +109,15 @@ Plug 'neovim/nvim-lspconfig'
 
 " autocompletion
 Plug 'hrsh7th/nvim-cmp'
+"Plug 'hrsh7th/cmp-buffer'
+"Plug 'hrsh7th/cmp-path'
+"Plug 'hrsh7th/cmp-cmdline'
 Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'hrsh7th/cmp-nvim-lsp'
 
 " snippets
 Plug 'L3MON4D3/LuaSnip'
-
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'onsails/lspkind-nvim'
+Plug 'rafamadriz/friendly-snippets'
 
 " treesitter - for improved syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
