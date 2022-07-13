@@ -2,3 +2,4 @@
 require('georgian.telescope')
 require('georgian.gitsigns')
 require('georgian.lspconfig')
+require('georgian.treesitter')
