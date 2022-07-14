@@ -129,6 +129,9 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'p00f/nvim-ts-rainbow' "rainbow brackets
 
 Plug 'windwp/nvim-autopairs' "automatically close brackets and other pairs
+
+" comments
+Plug 'numToStr/Comment.nvim'
 call plug#end()
 
 " Require Plugins configs - georgian is the namespace specified inside
