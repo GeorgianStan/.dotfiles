@@ -136,6 +136,9 @@ Plug 'numToStr/Comment.nvim'
 " file explorer
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'kyazdani42/nvim-tree.lua'
+
+" top buffer line
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 call plug#end()
 
 " Require Plugins configs - georgian is the namespace specified inside
