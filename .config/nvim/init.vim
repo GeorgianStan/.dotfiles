@@ -132,6 +132,10 @@ Plug 'windwp/nvim-autopairs' "automatically close brackets and other pairs
 
 " comments
 Plug 'numToStr/Comment.nvim'
+
+" file explorer
+Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
 
 " Require Plugins configs - georgian is the namespace specified inside
