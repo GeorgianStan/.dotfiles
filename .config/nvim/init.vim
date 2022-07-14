@@ -95,9 +95,12 @@ vnoremap <silent> p "_dp
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.config/nvim/plugged')
 "Plug 'gruvbox-community/gruvbox'
+" theming and user experience
 Plug 'sainnhe/gruvbox-material'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" git
 Plug 'tpope/vim-fugitive'
 Plug 'lewis6991/gitsigns.nvim'
 
@@ -105,6 +108,7 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+" improved coding experience
 " enable LSP
 Plug 'neovim/nvim-lspconfig'
 
@@ -122,7 +126,9 @@ Plug 'rafamadriz/friendly-snippets'
 
 " treesitter - for improved syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-Plug 'p00f/nvim-ts-rainbow'
+Plug 'p00f/nvim-ts-rainbow' "rainbow brackets
+
+Plug 'windwp/nvim-autopairs' "automatically close brackets and other pairs
 call plug#end()
 
 " Require Plugins configs - georgian is the namespace specified inside
