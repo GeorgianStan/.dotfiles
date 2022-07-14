@@ -94,7 +94,8 @@ vnoremap <silent> p "_dp
 " To remove a plugin, simply comment it or remove it form this declaration list and then run :PlugClean
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.config/nvim/plugged')
-Plug 'gruvbox-community/gruvbox'
+"Plug 'gruvbox-community/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
@@ -121,6 +122,7 @@ Plug 'rafamadriz/friendly-snippets'
 
 " treesitter - for improved syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'p00f/nvim-ts-rainbow'
 call plug#end()
 
 " Require Plugins configs - georgian is the namespace specified inside
@@ -130,5 +132,24 @@ lua require('georgian')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Theming
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has('termguicolors')
+  set termguicolors
+endif
+
 set bg=dark
-colorscheme gruvbox
+
+" gruvbox
+" colorscheme gruvbox
+
+" gruvbox-material
+
+" This configuration option should be placed before `colorscheme gruvbox-material`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:gruvbox_material_background = 'medium'
+
+" For better performance
+let g:gruvbox_material_better_performance = 1
+
+colorscheme gruvbox-material
+
+
