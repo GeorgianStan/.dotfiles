@@ -16,6 +16,7 @@ set scrolloff=8
 set nowrap
 set cursorline
 set completeopt=menuone,noselect " for autocompletion
+set updatetime=1000 
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -43,6 +44,9 @@ set smartindent
 noremap <Space> <Nop>
 let g:mapleader = " "
 
+" run the format command :lua vim.lsp.buf.formatting()
+nnoremap <silent> <leader>f :Format<CR>
+
 " copy & paste - C stands for CTRL
 vnoremap <C-c> "+y
 nnoremap <C-v> "+p
@@ -52,10 +56,6 @@ noremap <Up>    <Nop>
 noremap <Down>  <Nop>
 noremap <Left>  <Nop>
 noremap <Right> <Nop>
-
-" telescope remaps
-nnoremap <leader>p :Telescope find_files<CR>
-nnoremap <leader>b :Telescope buffers<CR>
 
 " splits navigation
 nnoremap <silent> <C-h> <C-w>h
@@ -87,6 +87,12 @@ vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
 " keep the yanked value in register after it was copied on top of another work
 vnoremap <silent> p "_dp
+
+" Plugin remaps
+" telescope remaps
+nnoremap <leader>p :Telescope find_files<CR>
+nnoremap <leader>b :Telescope buffers<CR>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins - using vim-plug https://github.com/junegunn/vim-plug
@@ -139,6 +145,9 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 " top buffer line
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+
+" formatting & linting
+Plug 'jose-elias-alvarez/null-ls.nvim'
 call plug#end()
 
 " Require Plugins configs - georgian is the namespace specified inside
@@ -167,5 +176,3 @@ let g:gruvbox_material_background = 'medium'
 let g:gruvbox_material_better_performance = 1
 
 colorscheme gruvbox-material
-
-
