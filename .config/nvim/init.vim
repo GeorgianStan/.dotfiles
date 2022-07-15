@@ -104,7 +104,6 @@ vnoremap <silent> p "_dp
 nnoremap <leader>p :Telescope find_files<CR>
 
 " bufferline
-" nnoremap <leader>b :BufferLinePick<CR>
  nnoremap <silent> bp :BufferLinePick<CR>
  nnoremap <silent> bc :BufferLinePickClose<CR>
 
@@ -117,8 +116,6 @@ call plug#begin('~/.config/nvim/plugged')
 "Plug 'gruvbox-community/gruvbox'
 " theming and user experience
 Plug 'sainnhe/gruvbox-material'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -166,6 +163,9 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " status line
 Plug 'nvim-lualine/lualine.nvim'
+
+"  
+Plug 'lukas-reineke/indent-blankline.nvim' 
 call plug#end()
 
 " Require Plugins configs - georgian is the namespace specified inside
