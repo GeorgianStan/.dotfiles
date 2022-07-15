@@ -2,21 +2,32 @@
 " => General Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number relativenumber  " Display line numbers
-set clipboard=unnamedplus " Copy/paste between vim and other programs.
 set t_Co=256 " Set if term supports 256 colors.
+
 set clipboard=unnamedplus       " Copy/paste betwen vim and other programs.
 set mouse=a " Enable Mouse
+
 set hidden " navigate buffers without losing unsaved work
+
 set undodir=~/.nvim/undodir
 set undofile " save undo history
 set noswapfile
+
 set noshowmode
 set signcolumn=auto
+
+
 set scrolloff=8
 set nowrap
 set cursorline
+
 set completeopt=menuone,noselect " for autocompletion
+
 set updatetime=1000 
+
+set splitbelow " force all horizontal splits to go below current window
+set splitright " all vertical splits to go to the right of current window
+
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -66,8 +77,8 @@ nnoremap <silent> <C-l> <C-w>l
 " resizing splits
 noremap <silent> <C-Left> :vertical resize -3<CR>
 noremap <silent> <C-Right> :vertical resize +3<CR>
-noremap <silent> <C-Up> :resize -3<CR>
-noremap <silent> <C-Down> :resize +3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :resize -3<CR>
 
 " naviate buffers - S stand for Shift
 noremap <silent> <S-l> :bnext <CR>
@@ -89,10 +100,13 @@ vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 vnoremap <silent> p "_dp
 
 " Plugin remaps
-" telescope remaps
+" telescope 
 nnoremap <leader>p :Telescope find_files<CR>
-nnoremap <leader>b :Telescope buffers<CR>
 
+" bufferline
+" nnoremap <leader>b :BufferLinePick<CR>
+ nnoremap <silent> bp :BufferLinePick<CR>
+ nnoremap <silent> bc :BufferLinePickClose<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins - using vim-plug https://github.com/junegunn/vim-plug
@@ -145,6 +159,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 " top buffer line
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+Plug 'moll/vim-bbye'
 
 " formatting & linting
 Plug 'jose-elias-alvarez/null-ls.nvim'
