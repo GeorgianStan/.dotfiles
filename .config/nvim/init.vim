@@ -117,8 +117,8 @@ call plug#begin('~/.config/nvim/plugged')
 "Plug 'gruvbox-community/gruvbox'
 " theming and user experience
 Plug 'sainnhe/gruvbox-material'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -163,6 +163,9 @@ Plug 'moll/vim-bbye'
 
 " formatting & linting
 Plug 'jose-elias-alvarez/null-ls.nvim'
+
+" status line
+Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
 
 " Require Plugins configs - georgian is the namespace specified inside
