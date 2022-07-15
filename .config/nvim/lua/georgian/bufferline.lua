@@ -6,8 +6,8 @@ end
 bufferline.setup{
   options = {
     -- map this two to Bdelete, so that the plugin vim-bbye can do it's magic and automatically select another buffer and don't mess the layout  
-    right_mouse_command = "Bdelete",
-    close_command = "Bdelete",
+    right_mouse_command = "Bdelete! %d",
+    close_command = "Bdelete! %d",
     show_close_icon=false,
     offsets = {
       {
