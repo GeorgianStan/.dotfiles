@@ -166,6 +166,7 @@ Plug 'nvim-lualine/lualine.nvim'
 
 "  
 Plug 'lukas-reineke/indent-blankline.nvim' 
+Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 " Require Plugins configs - georgian is the namespace specified inside
@@ -175,9 +176,7 @@ lua require('georgian')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Theming
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has('termguicolors')
-  set termguicolors
-endif
+set termguicolors
 
 set bg=dark
 
